@@ -1,4 +1,6 @@
 let stadiums = [];
+let searchResults = stadiums.slice();
+let sortByPriceFlag = false;
 
 const saveStadium = () => {
     const name = document.getElementById("name").value;
@@ -17,9 +19,21 @@ const saveStadium = () => {
     displayStadiums();
 };
 
+//function sortByPrice() {
+//    stadiums.sort((a, b) => a.price - b.price);
+//    displayStadiums(searchResults);
+//}
+
 function sortByPrice() {
-    stadiums.sort((a, b) => a.price - b.price);
-    displayStadiums();
+    sortByPriceFlag = !sortByPriceFlag;
+
+    if (sortByPriceFlag) {
+        searchResults.sort((a, b) => a.price - b.price);
+    } else {
+
+    }
+
+    displayStadiums(searchResults);
 }
 
 function displayStadiums(stadiumsToDisplay = stadiums) {
@@ -42,10 +56,10 @@ function displayStadiums(stadiumsToDisplay = stadiums) {
     });
 }
 
-function calculateTotalPrice() {
+function calculateTotalPrice(stadiumList) {
     let totalPrice = 0;
 
-    stadiums.forEach((stadium) => {
+    stadiumList.forEach((stadium) => {
         totalPrice += stadium.price;
     });
 
@@ -56,9 +70,13 @@ function calculateTotalPrice() {
 function findStadium() {
     const findInput = document.getElementById("find_input").value.toLowerCase();
 
-    const searchResults = stadiums.filter((stadium) => {
-        return stadium.name.toLowerCase().includes(findInput);
-    });
+    if (findInput.trim() === "") {
+        searchResults = stadiums.slice();
+    } else {
+        searchResults = stadiums.filter((stadium) => {
+            return stadium.name.toLowerCase().includes(findInput);
+        });
+    }
 
     displayStadiums(searchResults);
 }
@@ -74,6 +92,6 @@ function deleteStadium(index) {
 }
 
 function toggleAside() {
-    const animalAside = document.getElementById("stadiumAside");
-    animalAside.classList.toggle("hidden");
+    const stadiumAside = document.getElementById("stadiumAside");
+    stadiumAside.classList.toggle("hidden");
 }
