@@ -177,11 +177,43 @@ hr {
     cursor: pointer;
 }
 
-aside {
+aside, #editStadiumMenu {
     flex: 1.5;
     padding: 40px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#editStadiumMenu label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.cancel {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel:hover {
+    background-color: #f40404;
+}
+
+.saveEdit {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.saveEdit:hover {
+    background-color: #45a049;
 }
 
 main {
@@ -199,10 +231,20 @@ aside label {
     font-weight: bold;
 }
 
+#editStadiumMenu input[type="text"],
+textarea,
+input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 aside input[type="text"],
 textarea,
 input[type="number"] {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -213,7 +255,13 @@ textarea {
     resize: vertical;
 }
 
-aside button {
+select {
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.saveStadium {
     background-color: #4caf50;
     color: white;
     padding: 10px 20px;
@@ -222,8 +270,21 @@ aside button {
     cursor: pointer;
 }
 
-button:hover {
+.saveStadium:hover {
     background-color: #45a049;
+}
+
+.editStadium {
+    background-color: #0a9fc0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.editStadium:hover {
+    background-color: #03839d;
 }
 
 #stadiumList {

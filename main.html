@@ -52,12 +52,37 @@
       <p>
         Count total stadium expenses:
       </p>
-      <button id="count_button" type="button" onclick="calculateTotalPrice(searchResults)">
+      <button id="count_button" type="button" onclick="calculateTotalPrice()">
         Count
       </button>
       <p id="totalPrice">
         Total Price: 0
       </p>
+    </div>
+    <div id="editStadiumMenu" class="hidden">
+      <form id="editStadiumForm">
+        <h2>Edit Stadium</h2>
+        <label for="editName">Name:</label>
+        <input type="text" id="editName">
+
+        <label for="editDescription">Description:</label>
+        <textarea id="editDescription"></textarea>
+
+        <label for="editPrice">Price:</label>
+        <input type="number" id="editPrice">
+
+        <label for="editType">Type:</label>
+        <select id="editType">
+          <option value="" disabled selected>Select stadium type</option>
+          <option value="Skating Rink">Skating Rink</option>
+          <option value="Ski Resort">Ski Resort</option>
+          <option value="Stadium">Stadium</option>
+          <option value="Swimming Pool">Swimming Pool</option>
+        </select>
+
+        <button type="button" onclick="confirmEdit()" class="saveEdit">Save</button>
+        <button type="button" onclick="cancelEdit()" class="cancel">Cancel</button>
+      </form>
     </div>
   </div>
 
@@ -82,7 +107,7 @@
         <option value="Swimming Pool">Swimming Pool</option>
       </select>
 
-      <button type="button" onclick="saveStadium()">Save</button>
+      <button type="button" onclick="saveStadium()" class="saveStadium">Save</button>
     </form>
   </aside>
   <main id="list">
