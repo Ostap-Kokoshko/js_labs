@@ -1,15 +1,15 @@
 import React from "react";
-import StadiumPicture from "../Icons/mainStadium.jpg";
-import ImgModel1 from "../Icons/Lviv_Arena.jpg";
-import ImgModel2 from "../Icons/Lviv_Ukraina_Stadium.jpg";
-import ImgModel3 from "../Icons/Odesa_Chornomorets_Stadium.jpg";
+import StadiumPicture from "../../components/Icons/mainStadium.jpg";
+import ImgModel1 from "../../components/Icons/Lviv_Arena.jpg";
+import ImgModel2 from "../../components/Icons/Lviv_Ukraina_Stadium.jpg";
+import ImgModel3 from "../../components/Icons/Odesa_Chornomorets_Stadium.jpg";
 import {
     SectionWrapper,
     StyledText,
     StyledButton,
     CardWrapper,
 } from "./Home.styled";
-import CardItem from "../CardElement/CardItem";
+import CardItem from "../../components/CardElement/CardItem";
 
 const dataCard = [
     {

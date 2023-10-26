@@ -1,9 +1,9 @@
 import React from "react";
-import {BrowserRouter as Router, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {LinkingWrapper} from './Navigation.styled';
 
 const Navigation = () => (
-    <Router>
+    <div>
         <LinkingWrapper>
             <div className="nav">
                 <div className="nav-element">
@@ -17,7 +17,7 @@ const Navigation = () => (
                 </div>
             </div>
         </LinkingWrapper>
-    </Router>
+    </div>
 );
 
 export default Navigation;
