@@ -6,10 +6,8 @@ export const LinkingWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
     height: 75px;
   }
-
 
   .nav-element {
     display: inline-block;

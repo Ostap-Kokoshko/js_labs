@@ -3,7 +3,7 @@ import {StyledHeader, IconsWrapper, IconBase} from "./Header.styled";
 
 import {
     TwitterOutlined,
-    SearchOutlined,
+    GithubOutlined,
     ShoppingCartOutlined,
     InstagramOutlined,
     FacebookOutlined,
@@ -33,7 +33,7 @@ const Header = () => (
         </div>
         <div className="actions">
             <IconsWrapper>
-                <SearchOutlined/>
+                <GithubOutlined />
 
                 <ShoppingCartOutlined/>
             </IconsWrapper>

@@ -12,6 +12,7 @@ export const StyledHeader = styled.div`
 
   > div {
     display: flex;
+    margin-right: 5%;
   }
 
   p {
