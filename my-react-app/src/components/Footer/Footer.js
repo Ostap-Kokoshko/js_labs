@@ -11,7 +11,6 @@ import {
 const Footer = () => {
     return (
         <FooterWrapper>
-
             <VerticalLine/>
 
             <StyledText>© Copyright 2023</StyledText>
@@ -28,7 +27,6 @@ const Footer = () => {
             </IconsWrapper>
 
             <VerticalLine/>
-
         </FooterWrapper>
     );
 };

@@ -19,7 +19,7 @@ export const LinkingWrapper = styled.div`
     border: 2px solid #d1c3c3;
     border-radius: 15px;
     width: 8%;
-
+    
     a {
       color: black;
       text-decoration: none;
@@ -30,4 +30,10 @@ export const LinkingWrapper = styled.div`
         color: #222292;
       }
     }
+
+    .active {
+      font-size: 26px;
+      color: #222292;
+    }
+  }
 `

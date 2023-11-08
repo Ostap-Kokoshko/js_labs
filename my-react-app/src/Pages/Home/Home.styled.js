@@ -42,4 +42,5 @@ export const CardWrapper = styled.div`
   justify-content: space-around;
   width: 100%;
   margin-top: 20px;
+  flex-wrap: wrap;
 `
