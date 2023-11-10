@@ -1,25 +1,26 @@
 import React from "react";
-import {Button, Card} from "antd";
-import { PriceSection } from "./CardItem.styled";
+import {Card} from "antd";
+import {PriceSection} from "./CardItem.styled";
+import {Link} from "react-router-dom";
 
-const { Meta } = Card;
+const {Meta} = Card;
 
-const CardItem = ({ title='No title', text, imageSrc, price }) => (
-    <Card
-        hoverable
-        style={{ width: 400, borderRadius: "20px", marginTop: "20px" }}
-        cover={
-            <img style={{ borderRadius: "20px", height: "261px" }} alt="example" src={imageSrc} />
-        }
-    >
-        <Meta title={title} description={text} />
-        <PriceSection>
-            <p>Price: ${price}</p>
-            <Button>View More</Button>
-        </PriceSection>
-    </Card>
+const CardItem = (props) => (
+    <Link to={`/itempage/${props.id}`} style={{textDecoration: "none", width: 400}}>
+        <Card
+            hoverable
+            style={{width: 400, borderRadius: "20px", marginTop: "20px", height: "550px"}}
+            cover={
+                <img style={{borderRadius: "20px", height: "261px"}} alt="example" src={props.imageSrc}/>
+            }
+        >
+            <Meta title={props.title} description={props.text}/>
+            <PriceSection>
+                <p>Price: ${props.price}</p>
+            </PriceSection>
+        </Card>
+    </Link>
 );
-
 
 
 export default CardItem;

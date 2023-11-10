@@ -28,3 +28,7 @@
 ***
 ### Лабораторна робота №7
 Посилання на вітку [тут](https://github.com/Ostap-Kokoshko/js_labs/tree/seventh_lab)
+
+***
+### Лабораторна робота №8
+Посилання на вітку [тут](https://github.com/Ostap-Kokoshko/js_labs/tree/eighth_lab)
