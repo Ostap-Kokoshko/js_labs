@@ -41,7 +41,7 @@ const Catalog = () => {
     };
 
     const handleMenuClick = (element) => {
-        setSortStadium(element.key); // Збережіть тип сортування при виборі
+        setSortStadium(element.key);
     };
 
     const menuProps = {
