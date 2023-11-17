@@ -39,7 +39,7 @@ const Catalog = () => {
     const [maxPrice, setMaxPrice] = useState(100000);
     const [loading, setLoading] = useState(true);
     const [stadiumData, setBackendData] = useState([]);
-    const [filterCriteria, setFilterCriteria] = useState({
+    const [filter, setFilter] = useState({
         minPrice: 1,
         maxPrice: 100000,
         sortStadium: '',
@@ -48,7 +48,7 @@ const Catalog = () => {
 
     useEffect(() => {
         setLoading(true);
-        getStadiumList(filterCriteria)
+        getStadiumList(filter)
             .then((response) => {
                 setBackendData(response.data);
                 setLoading(false);
@@ -57,7 +57,7 @@ const Catalog = () => {
                 console.error('Error fetching data:', error);
                 setLoading(false);
             });
-    }, [filterCriteria]);
+    }, [filter]);
 
     const handleButtonClick = () => {
         message.info('Here you can choose the sorting method.');
@@ -68,7 +68,7 @@ const Catalog = () => {
     };
 
     const applyFilter = () => {
-        setFilterCriteria({
+        setFilter({
             minPrice,
             maxPrice,
             sortStadium,
