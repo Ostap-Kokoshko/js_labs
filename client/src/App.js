@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Home from "./Pages/Home/Home";
 import Catalog from "./Pages/Catalog/Catalog";
 import ItemPage from "./Pages/ItemPage/ItemPage";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
     return (
@@ -15,7 +16,7 @@ function App() {
             <Routes style={{flex: 1}}>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/catalog" element={<Catalog/>}/>
-                <Route path="/cart" element={<div>Its Cart page</div>}/>
+                <Route path="/cart" element={<Cart/>}/>
                 <Route path="/itempage/:id" element={<ItemPage/>}/>
             </Routes>
             <Footer/>
