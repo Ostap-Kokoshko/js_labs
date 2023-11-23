@@ -53,12 +53,3 @@ export const CartButtonStyled = styled.div `
   justify-content: space-around;
   flex-wrap: wrap;
 `
-
-export const DataList = styled.div `
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-`
