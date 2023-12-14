@@ -53,3 +53,10 @@ export const CartButtonStyled = styled.div `
   justify-content: space-around;
   flex-wrap: wrap;
 `
+
+export const StyledEmpty = styled.div `
+  font-size: 50px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: 600;
+`
