@@ -11,10 +11,12 @@ import { useState, useEffect } from "react";
 import {Button} from "antd";
 import dataCard from "../../components/Icons/dataCard";
 import {FrownOutlined} from "@ant-design/icons";
+import {saveToLocalStorage} from "./LocalStorage";
 
 const Cart = () => {
     const stadiumArray = useSelector((state) => state.stadiumList);
     const [totalPrice, setTotalPrice] = useState(0);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         let totalPrice = 0;
@@ -23,7 +25,10 @@ const Cart = () => {
         });
         setTotalPrice(totalPrice);
     }, [stadiumArray]);
-    const dispatch = useDispatch();
+
+    useEffect(() => {
+        saveToLocalStorage('cart', { stadiumList: stadiumArray });
+    }, [stadiumArray]);
 
     const handleIncrement = (name) => {
         dispatch(incrementCount(name));

@@ -1,3 +1,5 @@
+import {loadFromLocalStorage, saveToLocalStorage} from "./LocalStorage";
+
 const defaultState = {
     stadiumList: [],
 };
@@ -6,20 +8,23 @@ const findIndexByName = (arr, name) => {
     return arr.findIndex((item) => item.name === name);
 };
 
-export const reducer = (state = defaultState, action) => {
+export const reducer = (state = loadFromLocalStorage('cart') || defaultState, action) => {
     switch (action.type) {
         case "ADD_STADIUM":
             const foundIndex = findIndexByName(state.stadiumList, action.payLoad.name);
             if (foundIndex === -1) {
-                return { ...state, stadiumList: [...state.stadiumList, action.payLoad] };
+                const newState = { ...state, stadiumList: [...state.stadiumList, action.payLoad] };
+                saveToLocalStorage('cart', newState); // Збереження у localStorage
+                return newState;
             } else {
                 const updatedStadiumArr = [...state.stadiumList];
                 updatedStadiumArr[foundIndex] = {
                     ...updatedStadiumArr[foundIndex],
                     count: updatedStadiumArr[foundIndex].count + action.payLoad.count,
                 };
-                console.log(state.stadiumList[foundIndex].count);
-                return { ...state, stadiumList: updatedStadiumArr };
+                const newState = { ...state, stadiumList: updatedStadiumArr };
+                saveToLocalStorage('cart', newState);
+                return newState;
             }
         case "INCREMENT_COUNT":
             return {
@@ -41,6 +46,8 @@ export const reducer = (state = defaultState, action) => {
                     return stadium;
                 }),
             };
+        case "CLEAR_CART":
+            return { ...state, stadiumList: [] };
         default:
             return state;
     }
