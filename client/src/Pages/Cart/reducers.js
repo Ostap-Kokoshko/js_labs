@@ -14,7 +14,7 @@ export const reducer = (state = loadFromLocalStorage('cart') || defaultState, ac
             const foundIndex = findIndexByName(state.stadiumList, action.payLoad.name);
             if (foundIndex === -1) {
                 const newState = { ...state, stadiumList: [...state.stadiumList, action.payLoad] };
-                saveToLocalStorage('cart', newState); // Збереження у localStorage
+                saveToLocalStorage('cart', newState);
                 return newState;
             } else {
                 const updatedStadiumArr = [...state.stadiumList];
