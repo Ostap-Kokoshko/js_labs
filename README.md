@@ -40,3 +40,7 @@
 ***
 ### Лабораторна робота №10
 Посилання на вітку [тут](https://github.com/Ostap-Kokoshko/js_labs/tree/tenth_lab)
+
+***
+### Лабораторна робота №11
+Посилання на вітку [тут](https://github.com/Ostap-Kokoshko/js_labs/tree/eleventh_lab)
